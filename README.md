@@ -16,4 +16,23 @@ First, download this repository as a zip (you can use the download link above), 
 
 Because most of the browser doesn't allow you to make your custom new tab page, you should download an extension for your browser (see the list below).
 
-* Chrome: <a href="https://chrome.google.com/webstore/detail/custom-new-tab-url/mmjbdbjnoablegbkcklggeknkfcjkjia/">Custom New Tab URL</a>
+| Chrome | <a href="https://chrome.google.com/webstore/detail/custom-new-tab-url/mmjbdbjnoablegbkcklggeknkfcjkjia/">Custom New Tab URL</a>  |
+|--------|---------------------|
+| Opera  | <a href="https://addons.opera.com/en/extensions/details/homepage-in-new-tab/">Homepage in New Tab</a> |
+
+I've only tested for Chrome and Opera (GX), therefore I only have 2 extension recommendations, but maybe there will be future testing in some browser like Edge, Firefox, etc.
+
+After you installed the extension for your browser, open the setting page of the extension, and there will be an input for your custom URL. Usually you can type as below:
+```
+file:\\\path-to-extracted-zip\Madoka-Higuchi-Custom-Tab-main\index.html
+```
+Note: The file location depends on where you downloaded the zip and extracted it.
+
+If you're using Chrome, your new tab page is ready to go, you can press the new tab button or use ```Ctrl+T```.
+If you're using Opera, you need some configuration to do, because you can't use your custom page as a new page uf you press the plus button. Using ```Ctrl+T``` also won't work, but we can configure the shortcuts. Here are the steps:
+
+1. Open Opera settings and search for configure shortcuts. Or go to ```opera://settings/keyboardShortcuts```
+2. In the shortcuts page look for the ```New Tab``` shortcut, you can either delete the shortcut by hovering on it and press the "x" symbol, or you can change the shortcut, for me I choosed ```Ctrl+Q``` for the new shortcut.
+3. Still in the configure shortcuts page, scroll all the way to the bottom, you'll see lists of extensions with their own extensions, unless you changed them, the default is no shortcut for each extensions. So what you need to do is look for the extension "Homepage in New Tab", and set its shortcut to ```Ctrl+T```.
+
+Now you should be able to open your custom new tab page by using the shortcut ```Ctrl+T```.
