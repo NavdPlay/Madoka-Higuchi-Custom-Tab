@@ -22,17 +22,24 @@
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #D3AF73;
+      background-color: #8b8b8b;
     }
 
-    .madoka-img {
+    .main-img {
       /* visibility: hidden; */
       /* !!REMOVE THE LINE ABOVE FOR TESTING!! */
 
       position: absolute;
       right: 0;
       bottom: 0;
-      height: 100vh;
+      height: 75vh;
+    }
+
+    .secondary-img {
+      position: absolute;
+      right: 280px;
+      bottom: 0;
+      height: 80vh;
     }
 
     .text-box {
@@ -41,15 +48,16 @@
       left: 0;
       top: 0;
       bottom: 0;
-      background-image: linear-gradient(to left, #d3af73, #c4a064, #b3935d, #ad8d54);
+      background-image: linear-gradient(to left, #8b8b8b, #838383);
     }
+
     .search-box {
       position: absolute;
-      left: 50%;
+      left: 40.2%;
       top: 50%;
       transform: translate(-50%, -50%);
       height: 75%;
-      width: 80%;
+      width: 75%;
     }
     
     .search-bar {
@@ -148,11 +156,11 @@
 
     .tasks-container {
       position: relative;
-      left: 565px;
+      left: 518px;
       top: 125px;
       transform: translate(-50%, -50%);
       height: 275px;
-      width: 260px;
+      width: 220px;
     }
 
     .tasks-input-box {
@@ -250,11 +258,11 @@
           <hr>
           <hr id="line-0" class="line">
         </div>
-        <h1 class="text-header">Konnichiwa!</h1>
+        <h1 class="text-header">Konnichiwa! NavdPlay</h1>
         <h1 class="text-body">Be safe while surfing the web</h1>
         <div class="tasks-container">
           <div class="tasks-input-box">
-            <input type="text" class="tasks-input" placeholder="New Task" maxlength="18">
+            <input type="text" class="tasks-input" placeholder="New Task" maxlength="16">
             <img class="plus-button" src="plus.svg" onclick="addTask($('.tasks-input').val())">
           </div>
           <div class="tasks-box">
@@ -263,7 +271,8 @@
       </div>
     </div>
 
-    <img class="madoka-img" src="main.jpg" alt="Higuchi Madoka">
+    <img class="main-img" src="main.png" alt="Zero Two">
+    <img class="secondary-img" src="main2.png">
 
   </div>
 
@@ -303,12 +312,12 @@
       }
     }
 
-    var sentences = ['Be safe while surfing the web', "Don't forget to do your tasks"];
+    var sentences = ['Be safe while surfing the web', "Don't forget to do your tasks", 'Have some enough turu', 'Maen boleh, bodo jangan'];
     var dateInstance = new Date();
     var hour = dateInstance.getHours();
     var words = ['Ohayou!', 'Konnichiwa!', 'Konbanwa!'];
     
-    $('.text-header').html(`${words[Math.floor(hour/8.5)]} your-name`);
+    $('.text-header').html(`${words[Math.floor(hour/8.5)]} Billal-sama`);
     $('title').html(words[Math.floor(hour/8.5)]);
 
     $('.text-body').html(sentences[Math.floor(Math.random() * sentences.length)]);
