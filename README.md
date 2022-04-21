@@ -1,5 +1,7 @@
 Madoka-Higuchi-Custom-Tab
 =========================
+For manual in Indonesian, click <a href="https://github.com/NavdPlay/Madoka-Higuchi-Custom-Tab/wiki/Manual-id">here</a>
+
 A custom new tab page with Madoka Higuchi image in it, and a simple to do list using JavaScript localStorage, so you won't lose your to do list if you closed the browser or turned off the device. Don't worry, there is a search bar to browse the web via <a href="google.com">Google</a>'s search engine. 
 
 <a href="https://navdplay.github.io/Madoka-Higuchi-Custom-Tab">Demo</a>
