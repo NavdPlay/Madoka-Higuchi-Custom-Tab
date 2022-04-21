@@ -37,4 +37,10 @@ If you're using Opera, you need some configuration to do, because you can't use 
 
 Now you should be able to open your custom new tab page by using the shortcut ```Ctrl+T```.
 
+
+How To Custom Your Name
+=========================
+1. Open your code editor, if you don't have one you can use Notepad.
+2. 
+
 Enjoy!
