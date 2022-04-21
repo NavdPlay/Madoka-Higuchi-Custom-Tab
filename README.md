@@ -15,3 +15,5 @@ How To Install
 First, download this repository as a zip (you can use the download link above), and then extract it.
 
 Because most of the browser doesn't allow you to make your custom new tab page, you should download an extension for your browser (see the list below).
+
+* Chrome: <a href="https://chrome.google.com/webstore/detail/custom-new-tab-url/mmjbdbjnoablegbkcklggeknkfcjkjia/">Custom New Tab URL</a>
