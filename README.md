@@ -36,3 +36,5 @@ If you're using Opera, you need some configuration to do, because you can't use 
 3. Still in the configure shortcuts page, scroll all the way to the bottom, you'll see lists of extensions with their own extensions, unless you changed them, the default is no shortcut for each extensions. So what you need to do is look for the extension "Homepage in New Tab", and set its shortcut to ```Ctrl+T```.
 
 Now you should be able to open your custom new tab page by using the shortcut ```Ctrl+T```.
+
+Enjoy!
