@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="jquery.js"></script>
+  <script src="shaker.js"></script>
+  <title>Konnichiwa!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+    html * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Fira Sans', sans-serif;
+    }
+
+    .container {
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #D3AF73;
+    }
+
+    .madoka-img {
+      /* visibility: hidden; */
+      /* !!REMOVE THE LINE ABOVE FOR TESTING!! */
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+    }
+
+    .text-box {
+      position: absolute;
+      right: 475px;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background-image: linear-gradient(to left, #d3af73, #c4a064, #b3935d, #ad8d54);
+    }
+    .search-box {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: 75%;
+      width: 80%;
+    }
+    
+    .search-bar {
+      position: relative;
+      width: 100%;
+      height: 65px;
+      padding: 15px 5px;
+    }
+
+    .text-header {
+      position: absolute;
+      top: 170px;
+      font-size: 50px;
+      color: #fff;
+      font-weight: 500;
+      background-color: black;
+      padding: 5px 15px;
+    }
+
+    .text-body {
+      position: relative;
+      top: 170px;
+      font-size: 52.5px;
+      color: #000;
+      font-weight: 600;
+      padding: 35px 15px;
+      line-height: 57px;
+      border: solid black;
+      border-width: 0 2px;
+      width: 375px;
+    }
+
+    .search-bar hr {
+      position: absolute;
+      bottom: 15px;
+      background-color: #000;
+      border: none;
+      height: 2px;
+      width: calc(94.5% - 10px);
+      right: 5px;
+      transition: 0.3s;
+    }
+
+    #line-0, #line-1 {
+      height: 2.25px;
+      right: unset;
+      left: 42.5px;
+      background-color: #ffffff;
+    }
+
+    #line-0 {
+      width: 0
+    }
+
+    #line-1 {
+      width: calc(94.5% - 10px);
+    }
+
+    .google-logo {
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 30px;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .google-logo img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 25px;
+    }
+
+    .search-input {
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      transform: translate(0, -50%);
+      color: #fafafa;
+      width: calc(94.5% - 50px);
+      height: 65px;
+      padding: 0 10px;
+      font-size: 20px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .search-input::-webkit-input-placeholder {
+      color: #fafafa;
+    }
+
+    .tasks-container {
+      position: relative;
+      left: 565px;
+      top: 125px;
+      transform: translate(-50%, -50%);
+      height: 275px;
+      width: 260px;
+    }
+
+    .tasks-input-box {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      height: 45px;
+      width: 100%;
+      border: solid black;
+      border-width: 0 0 2px 0;
+    }
+
+    .tasks-input {
+      padding: 0 15px;
+      width: calc(82% - 30px);
+      height: 40px;
+      font-size: 16px;
+      color: #000;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-weight: 500;
+    }
+
+    .tasks-input::-webkit-input-placeholder {
+      color: #000;
+    }
+
+    .plus-button {
+      border-radius: 50%;
+      width: 17px;
+      position: relative;
+      top: 9px;
+      right: 7px;
+      padding: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .plus-button:hover {
+      background-color: #aa8d5a;
+      transform: scale(1.1);
+    }
+
+    .tasks-box {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 220px;
+      width: calc(100% - 10px);
+      padding: 0 5px;
+      overflow-y: auto;
+    }
+
+    .tasks {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      transition: 0.3s;
+      height: 20px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .strikethrough {
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      background-color: black;
+      height: 2px;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .tasks:hover .strikethrough {
+      width: 95%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="text-box">
+      <div class="search-box">
+        <div class="search-bar">
+          <div class="google-logo">
+            <img src="google.svg">
+          </div>
+          <!-- <p class="search-text">Search the web</p> -->
+          <input type="text" class="search-input" placeholder="Search the web" onfocus="changeWidth(document.getElementsByClassName('line')[0]);" onfocusout="changeWidth(document.getElementsByClassName('line')[0]);">
+          <hr>
+          <hr id="line-0" class="line">
+        </div>
+        <h1 class="text-header">Konnichiwa! NavdPlay</h1>
+        <h1 class="text-body">Be safe while surfing the web</h1>
+        <div class="tasks-container">
+          <div class="tasks-input-box">
+            <input type="text" class="tasks-input" placeholder="New Task" maxlength="18">
+            <img class="plus-button" src="plus.svg" onclick="addTask($('.tasks-input').val())">
+          </div>
+          <div class="tasks-box">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img class="madoka-img" src="main.jpg" alt="Higuchi Madoka">
+
+  </div>
+
+  <script>
+    var tasks = [];
+    var count = 0;
+    function checkTasks() {
+      if (localStorage.tasks == '') {
+        delete localStorage.tasks;
+      }
+      return true;
+    }
+
+    checkTasks();
+
+    if (localStorage.tasks != null) {
+      for (var i = 0; i < localStorage.tasks.split(',').length; i++) {
+        tasks.push(localStorage.tasks.split(',')[i]);
+        $('.tasks-box').append(`<div class="tasks" data-count="${i}">${localStorage.tasks.split(',')[i]}<hr class="strikethrough"></div>`);
+        count = i;
+      }
+    }
+
+    short = true;
+
+    function changeWidth(x) {
+      if (short) {
+        x.removeAttribute("id");
+        x.setAttribute("id", "line-1");
+        short = false;
+        return false;
+      } else {
+        x.removeAttribute("id");
+        x.setAttribute("id", "line-0");
+        short = true;
+        return false;
+      }
+    }
+
+    var sentences = ['Be safe while surfing the web', "Don't forget to do your tasks"];
+    var dateInstance = new Date();
+    var hour = dateInstance.getHours();
+    var words = ['Ohayou!', 'Konnichiwa!', 'Konbanwa!'];
+    
+    $('.text-header').html(`${words[Math.floor(hour/8.5)]} NavdPlay`);
+    $('title').html(words[Math.floor(hour/8.5)]);
+
+    $('.text-body').html(sentences[Math.floor(Math.random() * sentences.length)]);
+
+    function addTask(val) {
+      if (val.length == 0) {
+        $('.tasks-input').shake({dur: 300, drift: 1});
+      } else {
+        $('.tasks-box').append(`<div class="tasks" data-count="${count++}">${val}<hr class="strikethrough"></div>`);
+      }
+
+      tasks.push(val);
+      $('.tasks-input').val('');
+      localStorage.tasks = tasks.join(',');
+    }
+
+    $(document).on('click', '.tasks', function() {
+      var tempCount = $(this).data('count');
+      tasks.splice(tempCount, 1);
+      localStorage.tasks = tasks.join(',');
+      count = 0;
+      $('.tasks-box').html('');
+      for (var i = 0; i < tasks.length; i++) {
+        $('.tasks-box').append(`<div class="tasks" data-count="${count++}">${tasks[i]}<hr class="strikethrough"></div>`);
+      }
+
+      checkTasks();
+    });
+
+    $(document).on('click', '.strikethrough', function() {
+      var tempCount = $(this).parent().data('count');
+      tasks.splice(tempCount, 1);
+      localStorage.tasks = tasks.join(',');
+      count = 0;
+      $('.tasks-box').html('');
+      for (var i = 0; i < tasks.length; i++) {
+        $('.tasks-box').append(`<div class="tasks" data-count="${count++}">${tasks[i]}<hr class="strikethrough"></div>`);
+      }
+
+      checkTasks();
+    });
+
+    $('.search-input').keydown(function() {
+      if (event.key == 'Enter') {
+        window.location.href = `https://www.google.com/search?q=${$(this).val()}&ie=UTF-8&oe=UTF-8`;
+      }
+    });
+
+    $('.google-logo img').click(function() {
+      window.location.href = 'https://www.google.com/';
+    });
+  </script>
+</body>
+</html>
