@@ -7,7 +7,8 @@ A custom new tab page with Madoka Higuchi image in it, and a simple to do list u
 
 Note!!!
 =========================
-There are still some bug for the localStorage that is used for the functionality of the to do list. But this won't occur frequently.
+- There are still some bug for the localStorage that is used for the functionality of the to do list. But this won't occur frequently.
+- I haven't made this page responsive, so currently this web is only addressed for PC/laptop browsers.
 
 How To Install
 =========================
