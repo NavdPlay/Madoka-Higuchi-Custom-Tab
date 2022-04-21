@@ -40,7 +40,11 @@ Now you should be able to open your custom new tab page by using the shortcut ``
 
 How To Custom Your Name
 =========================
-1. Open your code editor, if you don't have one you can use Notepad.
-2. 
+1. Open your code editor, if you don't have one you can use Notepad which most of the computers already have by default.
+2. On the top left of the code editor window, press "File" and then press "Open", or just use ```Ctrl+O```.
+3. After that look for where you stored the extracted zip, open the folder and select ```index.html```, make sure you changed from "Text Documents (*.txt)" to "All Files" on the bottom right of the Open File window, so the files in the folder is visible.
+4. After you opened ```index.html```, search for "your-name" by using ```Ctrl+F```, and then replace "your-name" with your preferred name.
+
+Now you should have your own customized name in the page.
 
 Enjoy!
