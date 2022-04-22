@@ -249,9 +249,9 @@
           <!-- <p class="search-text">Search the web</p> -->
           <input type="text" class="search-input" placeholder="Search the web" onfocus="changeWidth(document.getElementsByClassName('line')[0]);" onfocusout="changeWidth(document.getElementsByClassName('line')[0]);" autofocus>
           <hr>
-          <hr id="line-0" class="line">
+          <hr id="line-1" class="line">
         </div>
-        <h1 class="text-header">Konnichiwa!</h1>
+        <h1 class="text-header">Konnichiwa! Davin-sama</h1>
         <h1 class="text-body">Be safe while surfing the web</h1>
         <div class="tasks-container">
           <div class="tasks-input-box">
@@ -264,7 +264,7 @@
       </div>
     </div>
 
-    <img class="madoka-img" src="main.jpg" alt="Higuchi Madoka">
+    <img class="madoka-img" src="main.png" alt="Elaina">
 
   </div>
 
@@ -288,7 +288,7 @@
       }
     }
 
-    short = true;
+    short = false;
 
     function changeWidth(x) {
       if (short) {
@@ -303,19 +303,19 @@
         return false;
       }
     }
-    
+
     function check_url(url) {
       var regex = /(([a-z]+:\/\/)?(([a-z0-9\-]+\.)+([a-z]{2}|aero|arpa|biz|com|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|pro|travel|local|internal))(:[0-9]{1,5})?(\/[a-z0-9_\-\.~]+)*(\/([a-z0-9_\-\.]*)(\?[a-z0-9+_\-\.%=&amp;]*)?)?(#[a-zA-Z0-9!$&'()*+.=-_~:@/?]*)?)(\s+|$)/gi;
       if(url.match(regex)) return true;
       else return false;
     }
 
-    var sentences = ['Be safe while surfing the web', "Don't forget to do your tasks"];
+    var sentences = ['Be safe while surfing the web', "Don't forget to do your tasks", "Don't forget to satir"];
     var dateInstance = new Date();
     var hour = dateInstance.getHours();
     var words = ['Ohayou!', 'Konnichiwa!', 'Konbanwa!'];
     
-    $('.text-header').html(`${words[Math.floor(hour/8.5)]} your-name`);
+    $('.text-header').html(`${words[Math.floor(hour/8.5)]} Davin-sama`);
     $('title').html(words[Math.floor(hour/8.5)]);
 
     $('.text-body').html(sentences[Math.floor(Math.random() * sentences.length)]);
