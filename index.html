@@ -302,6 +302,12 @@
         return false;
       }
     }
+    
+    function check_url(url) {
+      var regex = /(([a-z]+:\/\/)?(([a-z0-9\-]+\.)+([a-z]{2}|aero|arpa|biz|com|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|pro|travel|local|internal))(:[0-9]{1,5})?(\/[a-z0-9_\-\.~]+)*(\/([a-z0-9_\-\.]*)(\?[a-z0-9+_\-\.%=&amp;]*)?)?(#[a-zA-Z0-9!$&'()*+.=-_~:@/?]*)?)(\s+|$)/gi;
+      if(url.match(regex)) return true;
+      else return false;
+    }
 
     var sentences = ['Be safe while surfing the web', "Don't forget to do your tasks"];
     var dateInstance = new Date();
@@ -352,8 +358,12 @@
     });
 
     $('.search-input').keydown(function() {
-      if (event.key == 'Enter') {
-        window.location.href = `https://www.google.com/search?q=${$(this).val()}&ie=UTF-8&oe=UTF-8`;
+      if (event.key == 'Enter' && $('.search-input').val().length > 0) {
+        if (check_url($('.search-input').val())) {
+          window.location.replace('https://' + $('.search-input').val());
+        } else {
+          window.location.href = `https://www.google.com/search?q=${$(this).val().split(' ').join('+')}&ie=UTF-8&oe=UTF-8`;
+        }
       }
     });
 
