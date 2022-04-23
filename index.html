@@ -247,9 +247,9 @@
             <img src="google.svg">
           </div>
           <!-- <p class="search-text">Search the web</p> -->
-          <input type="text" class="search-input" placeholder="Search the web" onfocus="changeWidth(document.getElementsByClassName('line')[0]);" onfocusout="changeWidth(document.getElementsByClassName('line')[0]);" autofocus>
+          <input type="text" class="search-input" placeholder="Search the web" onfocus="toggleWidth(document.getElementsByClassName('line')[0]);" onfocusout="toggleWidth(document.getElementsByClassName('line')[0]);" autofocus>
           <hr>
-          <hr id="line-0" class="line">
+          <hr id="line-1" class="line">
         </div>
         <h1 class="text-header">Konnichiwa!</h1>
         <h1 class="text-body">Be safe while surfing the web</h1>
@@ -288,18 +288,14 @@
       }
     }
 
-    short = true;
-
-    function changeWidth(x) {
-      if (short) {
+    function toggleWidth(x) {
+      if (x.id == 'line-1') { 
         x.removeAttribute("id");
-        x.setAttribute("id", "line-1");
-        short = false;
+        x.setAttribute("id", "line-0");
         return false;
       } else {
         x.removeAttribute("id");
-        x.setAttribute("id", "line-0");
-        short = true;
+        x.setAttribute("id", "line-1");
         return false;
       }
     }
