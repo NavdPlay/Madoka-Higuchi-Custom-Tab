@@ -288,12 +288,18 @@
       }
     }
 
+    var notFirst = false;
+
     function toggleWidth(x) {
+      if (!notFirst) {
+        notFirst = true;
+        return false;
+      }
       if (x.id == 'line-1') { 
         x.removeAttribute("id");
         x.setAttribute("id", "line-0");
         return false;
-      } else {
+      } else if (x.id == 'line-0') {
         x.removeAttribute("id");
         x.setAttribute("id", "line-1");
         return false;
