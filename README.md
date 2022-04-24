@@ -16,7 +16,7 @@ Note!!!
 
 Changelog
 =========================
-* Apr 23, 2022: 
+* Apr 24, 2022: 
   * Fixing search bar focus effect
   * Added changlog
   * I made Madoka become a little harsh using the word dumb, idiot, etc.
