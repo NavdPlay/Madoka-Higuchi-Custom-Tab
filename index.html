@@ -23,7 +23,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #D3AF73;
+      background-image: linear-gradient(to left, #d3af73, #d3af73 45%, #ad8d54);
+      overflow: hidden;
     }
 
     .madoka-img {
@@ -31,9 +32,10 @@
       /* !!REMOVE THE LINE ABOVE FOR TESTING!! */
 
       position: absolute;
-      right: 0;
-      bottom: 0;
+      right: 60px;
+      bottom: -92px;
       height: 100vh;
+      transform: rotate(10deg) scale(1.2);
     }
 
     .text-box {
@@ -42,7 +44,8 @@
       left: 0;
       top: 0;
       bottom: 0;
-      background-image: linear-gradient(to left, #d3af73, #c4a064, #b3935d, #ad8d54);
+      /* background-image: linear-gradient(to left, #d3af73, #c4a064, #b3935d, #ad8d54); */
+      z-index: 5;
     }
     .search-box {
       position: absolute;
@@ -247,11 +250,11 @@
             <img src="google.svg">
           </div>
           <!-- <p class="search-text">Search the web</p> -->
-          <input type="text" class="search-input" placeholder="Search the web" onfocus="toggleWidth(document.getElementsByClassName('line')[0]);" onfocusout="toggleWidth(document.getElementsByClassName('line')[0]);" autofocus>
+          <input type="text" class="search-input" placeholder="Search the web" onfocus="longWidth(document.getElementsByClassName('line')[0]);" onfocusout="shortWidth(document.getElementsByClassName('line')[0]);" autofocus>
           <hr>
           <hr id="line-1" class="line">
         </div>
-        <h1 class="text-header">Konnichiwa!</h1>
+        <h1 class="text-header">Konnichiwa! NavdPlay</h1>
         <h1 class="text-body">Be safe while surfing the web</h1>
         <div class="tasks-container">
           <div class="tasks-input-box">
@@ -264,7 +267,7 @@
       </div>
     </div>
 
-    <img class="madoka-img" src="main.jpg" alt="Higuchi Madoka">
+    <img class="madoka-img" src="main.png" alt="Higuchi Madoka">
 
   </div>
 
@@ -274,6 +277,9 @@
     function checkTasks() {
       if (localStorage.tasks == '') {
         delete localStorage.tasks;
+        return true;
+      } else if (localStorage.hasOwnProperty('tasks')) {
+        tasks = localStorage.tasks.split(',');
       }
       return true;
     }
@@ -290,20 +296,14 @@
 
     var notFirst = false;
 
-    function toggleWidth(x) {
-      if (!notFirst) {
-        notFirst = true;
-        return false;
-      }
-      if (x.id == 'line-1') { 
-        x.removeAttribute("id");
-        x.setAttribute("id", "line-0");
-        return false;
-      } else if (x.id == 'line-0') {
-        x.removeAttribute("id");
-        x.setAttribute("id", "line-1");
-        return false;
-      }
+    function longWidth(x) {
+      x.removeAttribute("id");
+      x.setAttribute("id", "line-1");
+    }
+
+    function shortWidth(x) {
+      x.removeAttribute("id");
+      x.setAttribute("id", "line-0");
     }
 
     function check_url(url) {
@@ -312,7 +312,24 @@
       else return false;
     }
 
-    var sentences = ['Be safe while surfing the web', "Don't forget to do your tasks"];
+    function whatTime() {
+      setTimeout(timedMessage, 3000);
+      return "What time is it by the way?";
+    }
+
+    function timedMessage() {
+      $('.text-body').html(`Ah, it's ${new Date().toLocaleTimeString()} you dumb`);
+    }
+
+    function checkTask() {
+      if (tasks.length > 0) {
+        return 'You have tasks to do you idiot';
+      } else {
+        return "Looks like ur free now, want to do smt?";
+      }
+    }
+
+    var sentences = ['Internet sucks, just be careful', "Don't push urself too hard", whatTime, checkTask];
     var dateInstance = new Date();
     var hour = dateInstance.getHours();
     var words = ['Ohayou!', 'Konnichiwa!', 'Konbanwa!'];
