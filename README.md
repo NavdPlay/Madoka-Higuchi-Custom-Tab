@@ -14,15 +14,21 @@ Note!!!
 - There are still some bug for the localStorage that is used for the functionality of the to do list. But this won't occur frequently.
 - I haven't made this page responsive, so currently this web is only addressed for PC/laptop browsers.
 
+Changelog
+=========================
+* Apr 23, 2022: Fixing search bar focus effect, changed the main picture
+  * If you want to use the old image, simply change ```main.png``` to ```main.jpg``` in ```index.html```
+* Apr 21, 2022: Init upload, the app is released 🎉🎉
+
 How To Install
 =========================
 First, download this repository as a zip (you can use the download link above), and then extract it.
 
 Because most of the browser doesn't allow you to make your custom new tab page, you should download an extension for your browser (see the list below).
 
-| Chrome | <a href="https://chrome.google.com/webstore/detail/custom-new-tab-url/mmjbdbjnoablegbkcklggeknkfcjkjia/">Custom New Tab URL</a>  |
+| **Chrome** | **<a href="https://chrome.google.com/webstore/detail/custom-new-tab-url/mmjbdbjnoablegbkcklggeknkfcjkjia/">Custom New Tab URL</a>**  |
 |--------|---------------------|
-| Opera  | <a href="https://addons.opera.com/en/extensions/details/homepage-in-new-tab/">Homepage in New Tab</a> |
+| **Opera**  | **<a href="https://addons.opera.com/en/extensions/details/homepage-in-new-tab/">Homepage in New Tab</a>** |
 
 I've only tested for Chrome and Opera (GX), therefore I only have 2 extension recommendations, but maybe there will be future testing in some browser like Edge, Firefox, etc.
 
