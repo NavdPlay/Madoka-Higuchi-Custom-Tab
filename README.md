@@ -21,7 +21,6 @@ Changelog
   * Added changlog
   * I made Madoka become a little harsh using the word dumb, idiot, etc.
   * Changed the main picture
-  * If you want to use the old image, simply change ```main.png``` to ```main.jpg``` in ```index.html```
 * Apr 21, 2022: 
   * Init upload
   * The app is released 🎉🎉
